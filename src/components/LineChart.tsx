@@ -31,15 +31,7 @@ const LineChart: React.FC<Props> = ({ data, labels }) => {
       },
       options: {
         responsive: true,
-        scales: {
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: true,
-              },
-            },
-          ],
-        },
+        
       },
     });
   }, [data, labels]);
