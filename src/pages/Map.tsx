@@ -39,13 +39,13 @@ const Map = () => {
             if (!map) {
                 return;
               }
-          
+              
               // Read the CSV file
               Papa.parse('/locations.csv', {
                 header: true,
                 download: true,
                 complete: (results) => {
-                  const coordinates = results.data.map((row) => [row.Lat, row.Long, row.Year,row.Risk_Rating,row.Risk_Factors]);
+                  const coordinates = results.data.map((row) => [row.Lat, row.Long, row.Year]);
                 
                   // Create markers for each valid coordinate
                   const newMarkers = coordinates.map((coord) => {
@@ -56,7 +56,7 @@ const Map = () => {
                     const factor = parseInt(coord[4]);
           
                     if (!isNaN(lat) && !isNaN(lng) && !isNaN(year)) {
-                      return L.marker([lat, lng]).bindPopup(year.toString(),rating.toString(),factor.toString());
+                      return L.marker([lat, lng]).bindPopup(year.toString());
                     }
           
                     return null;
