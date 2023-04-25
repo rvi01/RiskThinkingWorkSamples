@@ -12,11 +12,10 @@ interface UserData {
 }
 
 const Map = () => {
-    const [map, setMap] = useState<UserData | null>(null);
+    const [map, setMap] = useState();
     const [markers, setMarkers] = useState([]);
     const [selectedDecade, setSelectedDecade] = useState("1990");
 
-    
     
     useEffect(() => {
         // Load Leaflet dynamically on the client-side
