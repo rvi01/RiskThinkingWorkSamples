@@ -31,7 +31,6 @@ const LineChart: React.FC<Props> = ({ data, labels }) => {
       },
       options: {
         responsive: true,
-        
       },
     });
   }, [data, labels]);
