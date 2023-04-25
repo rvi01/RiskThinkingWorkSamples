@@ -6,7 +6,7 @@ import Papa from 'papaparse';
 import Link from 'next/link';
 
 const Map = () => {
-    const [map, setMap] = useState<File | null>(null);
+    const [map, setMap] = useState<any | null>(null);
     const [markers, setMarkers] = useState([]);
     const [selectedDecade, setSelectedDecade] = useState("1990");
 
