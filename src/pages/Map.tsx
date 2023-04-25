@@ -5,14 +5,8 @@ import L from 'leaflet';
 import Papa from 'papaparse';
 import Link from 'next/link';
 
-interface UserData {
-    username: string;
-    password: string;
-    prevState: null
-}
-
 const Map = () => {
-    const [map, setMap] = useState();
+    const [map, setMap] = useState<File | null>(null);
     const [markers, setMarkers] = useState([]);
     const [selectedDecade, setSelectedDecade] = useState("1990");
 
