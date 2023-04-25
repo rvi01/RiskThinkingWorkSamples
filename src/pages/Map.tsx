@@ -5,10 +5,18 @@ import L from 'leaflet';
 import Papa from 'papaparse';
 import Link from 'next/link';
 
+interface UserData {
+    username: string;
+    password: string;
+    prevState: null
+}
+
 const Map = () => {
-    const [map, setMap] = useState(null);
+    const [map, setMap] = useState<UserData | null>(null);
     const [markers, setMarkers] = useState([]);
     const [selectedDecade, setSelectedDecade] = useState("1990");
+
+    
     
     useEffect(() => {
         // Load Leaflet dynamically on the client-side
@@ -33,6 +41,7 @@ const Map = () => {
       }, []);
 
     useEffect(() => {
+        
         import('leaflet').then((L) => {
             if (!map) {
                 return;
@@ -43,16 +52,18 @@ const Map = () => {
                 header: true,
                 download: true,
                 complete: (results) => {
-                  const coordinates = results.data.map((row) => [row.Lat, row.Long, row.Year]);
-          
+                  const coordinates = results.data.map((row) => [row.Lat, row.Long, row.Year,row.Risk_Rating,row.Risk_Factors]);
+                
                   // Create markers for each valid coordinate
                   const newMarkers = coordinates.map((coord) => {
                     const lat = parseFloat(coord[0]);
                     const lng = parseFloat(coord[1]);
                     const year = parseInt(coord[2]);
+                    const rating = parseInt(coord[3]);
+                    const factor = parseInt(coord[4]);
           
                     if (!isNaN(lat) && !isNaN(lng) && !isNaN(year)) {
-                      return L.marker([lat, lng]).bindPopup(year.toString());
+                      return L.marker([lat, lng]).bindPopup(year.toString(),rating.toString(),factor.toString());
                     }
           
                     return null;
@@ -111,7 +122,7 @@ const Map = () => {
 const MapPage = () => {
     return (
         <>
-        
+
         <div>
           <h2><Link href="/">Home</Link></h2>
         </div>
