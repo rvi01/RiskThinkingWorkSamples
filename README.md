@@ -1,3 +1,9 @@
+** Hello Team i tried my best to complete the task but some parts are missing**
+
+You can visit this URL directly :- https://risk-thinking-work-samples.vercel.app/
+
+** Thank you **
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
