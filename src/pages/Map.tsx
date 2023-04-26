@@ -45,7 +45,7 @@ const Map = () => {
                 header: true,
                 download: true,
                 complete: (results) => {
-                  const coordinates = results.data.map((row) => [row.Lat, row.Long, row.Year]);
+                  const coordinates = results.data.map((row : any ) => [row.Lat, row.Long, row.Year]);
                 
                   // Create markers for each valid coordinate
                   const newMarkers = coordinates.map((coord) => {
