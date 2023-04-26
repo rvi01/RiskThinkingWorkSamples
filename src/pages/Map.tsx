@@ -48,12 +48,11 @@ const Map = () => {
                   const coordinates = results.data.map((row : any ) => [row.Lat, row.Long, row.Year]);
                 
                   // Create markers for each valid coordinate
+                  
                   const newMarkers = coordinates.map((coord) => {
                     const lat = parseFloat(coord[0]);
                     const lng = parseFloat(coord[1]);
                     const year = parseInt(coord[2]);
-                    const rating = parseInt(coord[3]);
-                    const factor = parseInt(coord[4]);
           
                     if (!isNaN(lat) && !isNaN(lng) && !isNaN(year)) {
                       return L.marker([lat, lng]).bindPopup(year.toString());
@@ -62,7 +61,7 @@ const Map = () => {
                     return null;
                   }).filter(Boolean);
           
-                  setMarkers(newMarkers);
+                  setMarkers(newMarkers as never);
                   newMarkers.forEach((marker) => marker.addTo(map));
                 },
               });
