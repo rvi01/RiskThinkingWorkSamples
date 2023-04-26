@@ -24,7 +24,7 @@ export default function Home() {
           <h2><Link href="/datatable">Data Table</Link></h2>
         </div>
         <div>
-          <h2><Link href="/chart">Chart</Link></h2>
+          
         </div>
       </div>
     </main>
