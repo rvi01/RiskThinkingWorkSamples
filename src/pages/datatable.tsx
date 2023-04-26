@@ -39,32 +39,32 @@ const DataTablePage = () => {
     setFilteredData(sortedData);
   }, [sortColumn, sortDirection]);
 
-  const handleSort = (column, sortDirection) => {
+  const handleSort = (column: any, sortDirection: any) => {
     setSortColumn(column.selector);
     setSortDirection(sortDirection);
   };
 
-  const handleFilter = (e) => {
+  const handleFilter = (e: any) => {
     const searchTerm = e.target.value;
     const filtered = data.filter((item) =>
-      Object.values(item).some((value) => value.toLowerCase().includes(searchTerm.toLowerCase()))
+      Object.values(item).some((value: any) => value.toLowerCase().includes(searchTerm.toLowerCase()))
     );
     setFilteredData(filtered);
     setCurrentPage(1);
   };
 
-  const handlePageChange = (page) => {
+  const handlePageChange = (page: any) => {
     setCurrentPage(page);
   };
 
-  const handleItemsPerPageChange = (count) => {
+  const handleItemsPerPageChange = (count: any) => {
     setItemsPerPage(count);
     setCurrentPage(1);
   };
 
   const paginatedData = filteredData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
-  const columns = [
+  const columns: any = [
     {
       name: 'Asset Name',
       selector: 'Asset Name',
