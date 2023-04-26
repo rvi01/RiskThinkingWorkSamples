@@ -15,6 +15,7 @@
     "jsx": "preserve",
     "incremental": true,
     "useUnknownInCatchVariables": false,
+    "strictNullChecks": false,
     "plugins": [
       {
         "name": "next"

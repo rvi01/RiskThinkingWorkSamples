@@ -82,7 +82,7 @@ const Map = () => {
           
                 const year = parseInt(marker.getPopup().getContent());
           
-                return year >= selectedDecade && year < (selectedDecade + 10);
+                return year >= parseFloat(selectedDecade) && year < parseFloat(selectedDecade + 10);
               });
           
               // Remove all markers from the map and add the filtered ones
@@ -92,8 +92,8 @@ const Map = () => {
         
       }, [map, markers, selectedDecade]);
 
-      const handleDecadeChange = (event) => {
-        setSelectedDecade(parseInt(event.target.value));
+      const handleDecadeChange = (event: any) => {
+        setSelectedDecade((event.target.value));
       };
     
       return <>
