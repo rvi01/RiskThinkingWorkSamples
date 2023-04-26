@@ -99,7 +99,7 @@ const DataTablePage = () => {
       name: 'Risk Factors',
       selector: 'Risk Factors',
       sortable: true,
-      width: '500px',
+      width: '400px',
     },
     {
       name: 'Year',
@@ -133,8 +133,7 @@ const DataTablePage = () => {
         paginationTotalRows={filteredData.length}
         onChangeRowsPerPage={handleItemsPerPageChange}
         paginationPerPage={itemsPerPage}
-        paginationRowsPerPageOptions={[10, 20, 30]}
-        customTheme="customTheme"
+        paginationRowsPerPageOptions={[10, 20, 30, 40,50]}
       />
     </div>
   );
