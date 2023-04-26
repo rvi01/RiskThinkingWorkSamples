@@ -91,13 +91,13 @@ const DataTablePage = () => {
     },
     {
       name: 'Risk Rating',
-      selector: 'Risk Rating',
+      selector: 'Risk_Rating',
       sortable: true,
       width: '200px',
     },
     {
       name: 'Risk Factors',
-      selector: 'Risk Factors',
+      selector: 'Risk_Factors',
       sortable: true,
       width: '400px',
     },
@@ -131,6 +131,7 @@ const DataTablePage = () => {
         pagination
         paginationServer
         paginationTotalRows={filteredData.length}
+        onChangePage={handlePageChange}
         onChangeRowsPerPage={handleItemsPerPageChange}
         paginationPerPage={itemsPerPage}
         paginationRowsPerPageOptions={[10, 20, 30, 40,50]}
