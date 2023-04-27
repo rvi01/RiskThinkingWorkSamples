@@ -118,25 +118,6 @@ const LineGraph = ({ Lat, Asset_Name, Business_Category,Long }: LineGraphProps) 
   return (
     <div>
       <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Latitude:
-          <input type="number" value={lat || ''} onChange={(e) => {
-  console.log('New Lat:', e.target.value);
-  setLat(parseFloat(e.target.value))
-}} />
-        </label>
-        <br />
-        <label>
-          Longitude:
-          <input type="number" value={long || ''} onChange={(e) => {
-  console.log('New Long:', e.target.value);
-  setLong(parseFloat(e.target.value))
-}} />
-        </label>
-        <br />
-        <button type="submit">Submit</button>
-      </form>
       <div>
         <Line data={chartData} options={chartOptions} />
       </div>
