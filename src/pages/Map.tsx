@@ -5,11 +5,11 @@ import L from 'leaflet';
 import Papa from 'papaparse';
 import Link from 'next/link';
 
+
 const Map = () => {
     const [map, setMap] = useState<any | null>(null);
     const [markers, setMarkers] = useState([]);
     const [selectedDecade, setSelectedDecade] = useState("1990");
-
     
     useEffect(() => {
         // Load Leaflet dynamically on the client-side
@@ -39,6 +39,12 @@ const Map = () => {
             if (!map) {
                 return;
               }
+              const customIcon = L.icon({
+                iconUrl: './Image/marker.png', // set the URL of the custom marker image
+                iconSize: [25, 41], // set the size of the custom marker image
+                iconAnchor: [12, 41], // set the anchor point of the custom marker image
+                popupAnchor: [1, -34], // set the anchor point for the popup relative to the icon
+              });
               
               // Read the CSV file
               Papa.parse('/locations.csv', {
@@ -55,7 +61,7 @@ const Map = () => {
                     const year = parseInt(coord[2]);
           
                     if (!isNaN(lat) && !isNaN(lng) && !isNaN(year)) {
-                      return L.marker([lat, lng]).bindPopup(year.toString());
+                      return L.marker([lat, lng],{ icon: customIcon }).bindPopup(year.toString());
                     }
           
                     return null;
@@ -116,7 +122,9 @@ const MapPage = () => {
         <>
 
         <div>
-          <h2><Link href="/">Home</Link></h2>
+            <button className="flex items-center px-3 py-2 border rounded text-gray-300 border-gray-400 hover:text-white hover:border-white">
+              <Link href="/">Home</Link>
+            </button>
         </div>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <Map />

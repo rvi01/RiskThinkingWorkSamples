@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/bootstrap": "^5.2.6",
     "@types/chart.js": "^2.9.37",
     "@types/node": "18.16.0",
     "@types/react": "18.2.0",
+    "@types/react-bootstrap": "^0.32.32",
     "@types/react-dom": "18.2.0",
     "autoprefixer": "10.4.14",
     "bootstrap": "^5.2.3",
@@ -19,9 +21,11 @@
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
     "next": "13.3.1",
+    "next-transpile-modules": "^10.0.0",
     "papaparse": "^5.4.1",
     "postcss": "8.4.23",
     "react": "18.2.0",
+    "react-bootstrap": "^2.7.4",
     "react-chartjs-2": "^5.2.0",
     "react-data-table-component": "^7.5.3",
     "react-dom": "18.2.0",

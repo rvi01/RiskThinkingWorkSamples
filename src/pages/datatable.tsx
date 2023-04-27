@@ -3,6 +3,7 @@ import DataTable, { createTheme } from 'react-data-table-component';
 import Papa from 'papaparse';
 import Link from 'next/link';
 
+
 const DataTablePage = () => {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
@@ -120,7 +121,9 @@ const DataTablePage = () => {
   return (
     <div>
         <div>
-            <h2><Link href="/">Home</Link></h2>
+            <button className="flex items-center px-3 py-2 border rounded text-gray-300 border-gray-400 hover:text-white hover:border-white">
+              <Link href="/">Home</Link>
+            </button>
         </div>
       <input type="text" placeholder="Search..." onChange={handleFilter} />
       <DataTable

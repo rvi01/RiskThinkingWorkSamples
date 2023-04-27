@@ -2,6 +2,8 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'leaflet/dist/leaflet.css';
+import Navbar from '../components/Navbar';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] })
 

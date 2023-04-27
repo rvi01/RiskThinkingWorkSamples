@@ -44,6 +44,8 @@ const LineGraph = ({ Lat, Asset_Name, Business_Category,Long }: LineGraphProps) 
   const [state, setState] = useState<LineGraphState>({
     data: [],
   });
+  console.log('Lat:', lat);
+  console.log('Long:', long);
   useEffect(() => {
     // load the CSV data using PapaParse
     Papa.parse('/locations.csv', {
@@ -99,7 +101,7 @@ const LineGraph = ({ Lat, Asset_Name, Business_Category,Long }: LineGraphProps) 
         {
           scaleLabel: {
             display: true,
-            labelString: 'Risk Rating',
+            labelString: 'Risk_Rating',
           },
         },
       ],
@@ -119,12 +121,18 @@ const LineGraph = ({ Lat, Asset_Name, Business_Category,Long }: LineGraphProps) 
       <form onSubmit={handleSubmit}>
         <label>
           Latitude:
-          <input type="number" value={lat} onChange={(e) => setLat(parseFloat(e.target.value))} />
+          <input type="number" value={lat || ''} onChange={(e) => {
+  console.log('New Lat:', e.target.value);
+  setLat(parseFloat(e.target.value))
+}} />
         </label>
         <br />
         <label>
           Longitude:
-          <input type="number" value={long} onChange={(e) => setLong(parseFloat(e.target.value))} />
+          <input type="number" value={long || ''} onChange={(e) => {
+  console.log('New Long:', e.target.value);
+  setLong(parseFloat(e.target.value))
+}} />
         </label>
         <br />
         <button type="submit">Submit</button>
