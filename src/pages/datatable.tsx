@@ -67,7 +67,7 @@ const DataTablePage = () => {
   const columns: any = [
     {
       name: 'Asset Name',
-      selector: 'Asset Name',
+      selector: 'Asset_Name',
       sortable: true,
       width: '200px',
     },
@@ -85,7 +85,7 @@ const DataTablePage = () => {
     },
     {
       name: 'Business Category',
-      selector: 'Business Category',
+      selector: 'Business_Category',
       sortable: true,
       width: '200px',
     },
