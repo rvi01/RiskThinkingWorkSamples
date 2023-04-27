@@ -1,4 +1,4 @@
-Asset Name,Lat,Long,Business Category,Risk_Rating,Risk_Factors,Year
+Asset_Name,Lat,Long,Business_Category,Risk_Rating,Risk_Factors,Year
 "Mcknight, Beasley and Stewart",46.1351,-60.1831,Energy,0.06,"{""Earthquake"": 0.06}",2050
 Acevedo-Kennedy,50.26729,-119.27337,Technology,0.14,"{""Extreme heat"": 0.01, ""Wildfire"": 0.04, ""Tornado"": 0.03, ""Flooding"": 0.02, ""Volcano"": 0.01, ""Hurricane"": 0.02, ""Earthquake"": 0.01}",2050
 Ware PLC,45.44868,-73.81669,Retail,0.36,"{""Hurricane"": 0.02, ""Extreme heat"": 0.03, ""Tornado"": 0.06, ""Wildfire"": 0.02, ""Flooding"": 0.05, ""Drought"": 0.02, ""Volcano"": 0.06, ""Extreme cold"": 0.05, ""Earthquake"": 0.04, ""Sea level rise"": 0.01}",2030

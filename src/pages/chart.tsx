@@ -1,17 +1,11 @@
-import React from 'react';
-import LineChart from '../components/LineChart';
-import Link from 'next/link';
+import LineGraph from "../components/LineChart";
 
-const Page: React.FC = () => {
-  const data = [10, 20, 30, 40, 50, 60];
-  const labels = ['January', 'February', 'March', 'April', 'May', 'June'];
-
-  return <>
+export default function Home() {
+  return (
     <div>
-        <h2><Link href="/">Home</Link></h2>
-    </div>
-    <LineChart data={data} labels={labels}></LineChart>
-  </>;
-};
+      <h1>Risk Rating over time</h1>
 
-export default Page;
+      <LineGraph />
+    </div>
+  );
+}
