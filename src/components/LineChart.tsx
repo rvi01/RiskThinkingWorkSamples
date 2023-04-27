@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Chart from 'chart.js/auto';
+import { Chart, ChartConfiguration } from 'chart.js/auto';
 import Papa from 'papaparse';
 import { Line } from 'react-chartjs-2';
 import {
@@ -85,7 +85,7 @@ const LineGraph = ({ Lat, Asset_Name, Business_Category,Long }: LineGraphProps) 
   };
 
   // set up the chart options
-  const chartOptions = {
+  const chartOptions: any  = {
     scales: {
       xAxes: [
         {
