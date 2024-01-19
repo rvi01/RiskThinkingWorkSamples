@@ -1,2 +1,2 @@
 runtime: nodejs18
-env: standard
+service: demo4
